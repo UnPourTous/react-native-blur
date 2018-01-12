@@ -35,6 +35,9 @@ A component for UIVisualEffectView's blur and vibrancy effect on iOS, and [500px
 
 ```
 android {
+    // make sure to use 23.0.3 instead of 23.0.1
+    buildToolsVersion '23.0.3'
+
     // ...
     defaultConfig {
         // Add these lines below the existing config
@@ -65,6 +68,9 @@ android {
   - `xlight` - extra light blur type
   - `light` - light blur type
   - `dark` - dark blur type
+  - `extraDark` - extra dark blur type (tvOS only)
+  - `regular` - regular blur type (tvOS only)
+  - `prominent` - prominent blur type (tvOS only)
 - `blurAmount` (Default: 10, Number)
   - `0-100` - Adjusts blur intensity
 
@@ -197,6 +203,33 @@ npm install
 ```
 react-native run-ios
 ```
+
+#### Run the tvOS app
+
+type:
+```
+react-native run-ios
+```
+
+`react-native link` don’t works properly with the tvOS target so we need to add the library manually.
+
+First select your project in Xcode.
+
+<img src="./docs/tvOS-step-1.jpg" width="40%">
+
+After that, select the tvOS target of your application and select « General » tab
+
+<img src="./docs/tvOS-step-2.jpg" width="40%">
+
+Scroll to « Linked Frameworks and Libraries » and tap on the + button
+
+<img src="./docs/tvOS-step-3.jpg" width="40%">
+
+Select RNBlur-tvOS
+
+<img src="./docs/tvOS-step-4.jpg" width="40%">
+
+That’s all, you can use react-native-blur for your tvOS application
 
 #### Run the Android app
 
